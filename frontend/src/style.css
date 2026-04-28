@@ -7,3 +7,56 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   background: #f5f7fb;
 }
+
+.animate-fade-in {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.floating-blob {
+  animation: float-blob 9s ease-in-out infinite;
+}
+
+.floating-blob-delayed {
+  animation: float-blob 11s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.fancy-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fancy-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+}
+
+.profile-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12px, -14px) scale(1.05);
+  }
+}
